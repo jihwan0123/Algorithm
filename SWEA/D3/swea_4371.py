@@ -10,6 +10,8 @@ for tc in range(1, 1 + int(input())):
     happy_day = [int(input()) for i in range(N)]
     period = set()
     for i in range(1, len(happy_day)):
+        if (happy_day[i] - 1) in period:
+            continue
         check = True
         if period:
             for j in period:
