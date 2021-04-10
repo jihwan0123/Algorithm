@@ -121,3 +121,16 @@
     - test_case는 통과했지만 오답
     - 앞에서 벽을 뚫고 왔을때와 뚫지 않고 왔을 때 거리가 같은 경우 문제가 발생한다.
       - 뚫었을 경우와 뚫지 않은 경우를 나눠서 2차원 배열생성해서 방문체크
+
+# <04.10>
+
+## 1697. 숨바꼭질(silver1)
+
+- BFS
+- x-1, x+1, x*2 를 queue에 저장하면서 가는데 걸린 시간 visited에 체크 , 동생 찾으면 return
+- queue를 만들 때 list 대신 deque를 생성하면 속도가 훨씬 빨라진다 (`from collections import deque`)
+  - 시간복잡도 O(n) vs O(1) 차이
+
+## 11866. 요세푸스0 (silver4)
+
+- deque.rotate 사용해봄
