@@ -4,7 +4,7 @@ import sys
 
 sys.stdin = open('swea_5189.txt')
 
-'''
+
 def perm(idx):
     global res
     if idx == N - 1:
@@ -27,27 +27,4 @@ for tc in range(1, 1 + int(input())):
     nums = list(range(N))
     res = 987654321
     perm(0)
-    print('#%d %d' % (tc, res))
-'''
-
-
-def perm(idx, total):
-    global res
-    if idx == N:
-        res = total
-        return
-
-    else:
-        for i in range(idx, N - 1):
-            nums[idx], nums[i] = nums[i], nums[idx]
-            perm(idx + 1, total + data[nums[i]][[nums[idx]]])
-            nums[idx], nums[i] = nums[i], nums[idx]
-
-
-for tc in range(1, 1 + int(input())):
-    N = int(input())
-    data = [list(map(int, input().split())) for _ in range(N)]
-    nums = list(range(N))
-    res = 0
-    perm(0, res)
     print('#%d %d' % (tc, res))
