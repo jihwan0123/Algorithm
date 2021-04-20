@@ -2,10 +2,9 @@
 
 import sys
 
+sys.stdin = open('swea_2806.txt')
 
-# sys.stdin = open('swea_2806.txt')
-
-
+'''
 def bfs(n, level):
     global result
     if level == n:
@@ -36,3 +35,35 @@ for tc in range(1, 1 + int(input())):
     bfs(N, 0)
 
     print('#{} {}'.format(tc, result))
+'''
+
+
+def nQueen(level):
+    global res
+    if level == N:
+        res += 1
+        return
+
+    for x in range(N):
+        # level-x+n-1 = x - level
+        if col[x] or diag1[x + level] or diag2[level - x + N - 1]:
+            continue
+
+        col[x] = 1
+        diag1[x + level] = 1
+        diag2[level - x + N - 1] = 1
+
+        nQueen(level + 1)
+
+        col[x] = 0
+        diag1[x + level] = 0
+        diag2[level - x + N - 1] = 0
+
+
+for tc in range(1, 1 + int(input())):
+    N = int(input())
+    col, diag1, diag2 = [0] * (2 * N), [0] * (2 * N), [0] * (2 * N)
+    res = 0
+    nQueen(0)
+
+    print('#{} {}'.format(tc, res))
