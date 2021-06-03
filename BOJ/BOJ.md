@@ -156,3 +156,13 @@
 
 - MST 연습 (prim, kruskal)
 - prim은 heapq 안쓰니까 시간초과 발생(최솟값 계속 구해서 그런듯?)
+
+
+
+# <06.03>
+
+## 1916. [최소비용 구하기](./gold5/boj_1916.py)
+
+- 다익스트라 연습
+- heapq 사용, input=sys.stdin.readline 안하면 시간초과
+- 인접리스트 만들때 도시의 개수로 만들어야되는데 버스의 개수로 만들어서 계속 indexerror 발생
