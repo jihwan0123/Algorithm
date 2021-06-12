@@ -10,7 +10,6 @@ E I L N O
 # N = 5
 N = int(input())
 arr = [[' ' for _ in range(N)] for _ in range(N)]
-total = N*(N+1)//2
 start = ord('A')
 for i in range(N):
     k = N
