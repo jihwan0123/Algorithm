@@ -53,3 +53,9 @@
 
 ### 1161. [하노이1](./Beginner_Coder/jo_1161.py)
 
+## <06.17>
+
+### 1169. [주사위 던지기1](./Beginner_Coder/jo_1169.py)
+
+### 1102. [스택 (stack)](./Beginner_Coder/jo_1102.py)
+
