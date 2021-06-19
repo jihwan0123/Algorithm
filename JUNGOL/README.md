@@ -59,3 +59,9 @@
 
 ### 1102. [스택 (stack)](./Beginner_Coder/jo_1102.py)
 
+## <06.19>
+
+### 1009. [각 자리수의 역과 합](./Beginner_Coder/jo_1009.py)
+
+### 2811. [소수와 합성수](./Beginner_Coder/jo_2811.py)
+
