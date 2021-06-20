@@ -65,3 +65,11 @@
 
 ### 2811. [소수와 합성수](./Beginner_Coder/jo_2811.py)
 
+## <06.20>
+
+### 2604. [그릇](./Beginner_Coder/jo_2604.py)
+
+### 2514. [문자열 찾기](./Beginner_Coder/jo_2514.py)
+
+### 2857. [세로읽기](./Beginner_Coder/jo_2857.py)
+
