@@ -77,3 +77,9 @@
 
 ### 1523. [별삼각형1](./Beginner_Coder/jo_1523.py)
 
+## <06.25>
+
+### 1175. [주사위 던지기2](./Beginner_Coder/jo_1175.py)
+
+### 2817. [로또](./Beginner_Coder/jo_2817.py)
+
