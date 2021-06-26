@@ -83,3 +83,9 @@
 
 ### 2817. [로또](./Beginner_Coder/jo_2817.py)
 
+## <06.26>
+
+### 1459. [숫자고르기](./Beginner_Coder/jo_1459.py)
+
+- bfs로 cycle 찾기
+
