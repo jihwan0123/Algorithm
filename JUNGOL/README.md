@@ -89,3 +89,10 @@
 
 - bfs로 cycle 찾기
 
+## <06.27>
+
+### 1021. [장난감조립](./Beginner_Coder/jo_1021.py)
+
+- bfs로 풀이
+- BOJ에서 시간초과 발생 ([BOJ에서 다시 방법으로 풀어보기](https://www.acmicpc.net/problem/2637))
+
