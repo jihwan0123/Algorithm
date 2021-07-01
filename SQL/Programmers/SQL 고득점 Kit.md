@@ -1,5 +1,7 @@
 ## SQL 고득점 Kit
 
+> https://programmers.co.kr/learn/challenges
+
 ## SELECT
 
 ### 모든 레코드 조회하기
@@ -141,7 +143,17 @@ ORDER BY HOUR(DATETIME);
 
 ### 입양 시각 구하기2
 
+>@variable 사용
+>
+>https://dev.mysql.com/doc/refman/8.0/en/user-variables.html
+
 ```mysql
+SET @hour = -1; 
+
+SELECT (@hour := @hour + 1) as HOUR,
+(SELECT COUNT(*) FROM ANIMAL_OUTS WHERE HOUR(DATETIME) = @hour) as 'COUNT'
+FROM ANIMAL_OUTS
+WHERE @hour < 23;
 ```
 
 
@@ -208,6 +220,12 @@ ORDER BY INS.DATETIME
 ### 오랜 기간 보호한 동물(1)
 
 ```mysql
+SELECT A.NAME, A.DATETIME
+FROM ANIMAL_INS A LEFT JOIN ANIMAL_OUTS B
+ON A.ANIMAL_ID = B.ANIMAL_ID
+WHERE B.DATETIME IS NULL
+ORDER BY A.DATETIME
+LIMIT 3;
 ```
 
 
@@ -215,6 +233,11 @@ ORDER BY INS.DATETIME
 ### 보호소에서 중성화한 동물
 
 ```mysql
+SELECT A.ANIMAL_ID, A.ANIMAL_TYPE, A.NAME
+FROM ANIMAL_INS A LEFT JOIN ANIMAL_OUTS B
+ON A.ANIMAL_ID = B.ANIMAL_ID
+WHERE A.SEX_UPON_INTAKE LIKE 'Intact%'
+AND B.SEX_UPON_OUTCOME NOT LIKE 'Intact%';
 ```
 
 
@@ -224,7 +247,9 @@ ORDER BY INS.DATETIME
 ### 루시와 엘라 찾기
 
 ```mysql
-
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+WHERE NAME IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty');
 ```
 
 
@@ -232,7 +257,11 @@ ORDER BY INS.DATETIME
 ### 이름에 el이 들어가는 동물 찾기
 
 ```mysql
-
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE UPPER(NAME) LIKE '%EL%'
+AND ANIMAL_TYPE='Dog'
+ORDER BY NAME;
 ```
 
 
@@ -240,7 +269,9 @@ ORDER BY INS.DATETIME
 ### 중성화 여부 파악하기
 
 ```mysql
-
+SELECT ANIMAL_ID, NAME, 
+IF(SEX_UPON_INTAKE LIKE 'Neutered%' OR SEX_UPON_INTAKE LIKE 'Spayed%', 'O','X') AS '중성화'
+FROM ANIMAL_INS;
 ```
 
 
@@ -248,12 +279,23 @@ ORDER BY INS.DATETIME
 ### 오랜 기간 보호한 동물(2)
 
 ```mysql
+SELECT A.ANIMAL_ID, A.NAME
+FROM ANIMAL_INS A JOIN ANIMAL_OUTS B
+ON A.ANIMAL_ID = B.ANIMAL_ID
+ORDER BY (B.DATETIME-A.DATETIME) DESC
+LIMIT 2;
 ```
 
 
 
 ### DATETIME에서 DATE로 형 변환
 
-```mysql
+> DATE_FORMAT 사용
+>
+> https://www.w3schools.com/sql/func_mysql_date_format.asp
 
+```mysql
+SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') AS '날짜'
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
 ```

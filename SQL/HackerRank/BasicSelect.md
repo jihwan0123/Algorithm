@@ -1,5 +1,7 @@
 # Basic Select
 
+>https://www.hackerrank.com/domains/sql?filters%5Bsubdomains%5D%5B%5D=select&badge_type=sql
+
 ### Revising the Select Query I
 
 ```mysql
