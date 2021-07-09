@@ -173,6 +173,8 @@
 
 ### 2629. [양팔저울](./gold2/boj_2629.py)
 
+> https://www.acmicpc.net/problem/2629
+
 - DP문제
 - `memo[level][weight]`
   - level 개를 사용했을때 weight 무게가 있는지 체크
@@ -198,6 +200,8 @@
 
 ### 2637. [장난감조립](./gold2/boj_2637.py)
 
+> https://www.acmicpc.net/problem/2637
+
 - 위상정렬
 - 진입 차수가 0인거부터 시작
 - 연결된 부분들 계산하면서 간선 제거
@@ -211,6 +215,8 @@
 
 ### 14466. [소가 길을 건너간 이유 6](./gold4/boj_14466.py)
 
+> https://www.acmicpc.net/problem/14466
+
 ## <07.07>
 
 ### 3273. [두 수의 합](./silver3/boj_3273.py)
@@ -222,6 +228,8 @@
 ## <07.08>
 
 ### 1062. [가르침](./gold4/boj_1062.py)
+
+> https://www.acmicpc.net/problem/1062
 
 > 비트마스킹 사용
 
@@ -235,3 +243,12 @@
 >
 > ans = 2 나와야 하는데 0이 나왔다. => 전체 단어의 수(len(all_words)보다 k가 크면 n 출력
 
+## <07.09>
+
+### 15686. [치킨 배달](./gold5/boj_15686.py)
+
+>https://www.acmicpc.net/problem/15686
+
+처음에 bfs로 접근해서 시간이 엄청 오래걸렸다.
+
+가정집, 치킨집 좌표를 저장해두고 완전 탐색하며 최소 거리를 계산하면 훨씬 간단해진다.
