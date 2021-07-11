@@ -96,3 +96,7 @@
 - bfs로 풀이
 - BOJ에서 시간초과 발생 ([BOJ에서 다시 방법으로 풀어보기](https://www.acmicpc.net/problem/2637))
 
+## <07.11>
+
+### 1490. [다음 조합(next combination)](./Beginner_Coder/jo_1490.py)
+
