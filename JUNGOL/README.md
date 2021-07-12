@@ -100,3 +100,5 @@
 
 ### 1490. [다음 조합(next combination)](./Beginner_Coder/jo_1490.py)
 
+### 2567. [싸이클](./Beginner_Coder/jo_2567.py)
+
