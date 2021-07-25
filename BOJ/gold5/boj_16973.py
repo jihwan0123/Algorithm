@@ -1,30 +1,37 @@
 # 16973. 직사각형 탈출
 import sys
-
-sys.stdin = open('boj_16973.txt')
+from collections import deque
+input = sys.stdin.readline
 
 dxy = [[0, 1], [1, 0], [0, -1], [-1, 0]]
 
-N, M = map(int, sys.stdin.readline().split())
+N, M = map(int, input().split())
 # N * M 격자판의 크기
-maps = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
-H, W, Sr, Sc, Fr, Fc = map(int, sys.stdin.readline().split())
-queue = [(Sr - 1, Sc - 1, 0)]
+maps = [list(map(int, input().split())) for _ in range(N)]
+H, W, Sr, Sc, Fr, Fc = map(int, input().split())
 visited = [[0] * M for _ in range(N)]
 visited[Sr - 1][Sc - 1] = 1
 
+walls = []
+for i in range(N):
+    for j in range(M):
+        if maps[i][j]:
+            walls.append((i, j))
+
 
 def check(a, b):
-    for i in range(a, a + H):
-        for j in range(b, b + W):
-            if maps[i][j]:
-                return False
+    if a+H-1 >= N or b+W-1 >= M:  # 범위 벗어나면 False
+        return False
+    for x, y in walls:  # 범위 안에 벽이 있는지 체크
+        if a <= x < a+H and b <= y < b+W:
+            return False
     return True
 
 
 def bfs():
+    queue = deque([(Sr - 1, Sc - 1, 0)])
     while queue:
-        x, y, cnt = queue.pop(0)
+        x, y, cnt = queue.popleft()
         # 목적 좌표 도달하면 cnt
         if x == Fr - 1 and y == Fc - 1:
             return cnt

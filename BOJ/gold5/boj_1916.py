@@ -1,36 +1,25 @@
 # 1916. 최소비용 구하기
 
-# input
-'''
-5
-8
-1 2 2
-1 3 3
-1 4 1
-1 5 10
-2 4 2
-3 4 1
-3 5 1
-4 5 3
-1 5
-'''
-# output: 4
-import sys, heapq
+import sys
+import heapq
+INF = sys.maxsize
 input = sys.stdin.readline
 
-def dijkstra(start, end):
-    d = [sys.maxsize] * (N + 1)
+
+def dijkstra(start):
+    d = [INF] * (N + 1)
     d[start] = 0
-    hq = []
-    heapq.heappush(hq, (0, start))
+    hq = [(0, start)]
 
     while hq:
         weight, node = heapq.heappop(hq)
+        if d[node] < weight:  # 경로 같은데 비용이 다른 경우도 있을 수 있다.(안해주면 시간초과)
+            continue
         for e, c in adj[node]:
             if d[e] > weight + c:
                 d[e] = weight + c
                 heapq.heappush(hq, (d[e], e))
-    return d[end]
+    return d
 
 
 N = int(input())  # 도시의 개수
@@ -40,6 +29,6 @@ for _ in range(M):
     s, e, w = map(int, input().split())
     adj[s].append((e, w))
 
-start, end = map(int, input().split())
+x, y = map(int, input().split())
 
-print(dijkstra(start, end))
+print(dijkstra(x)[y])
