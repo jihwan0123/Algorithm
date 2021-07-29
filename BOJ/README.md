@@ -367,3 +367,15 @@ chk = False이면 visited를 0으로 초기화시켜줘서 해결
   - 연속된 R은 ㅋㅋ루ㅋㅋ 문자열이 된다.
   - `r - l + 1`
 
+## <07.29>
+
+### 12865. [평범한 배낭](./gold5/boj_12865.py)
+
+> 0/1 *Knapsack* Problem
+
+ABCD의 value와 weight가 있을 때,
+
+A,B,C,D가 있는 경우 vs 없는경우로 나눠서 DP
+
+`DP(n,w) = max(DP(n-1,w), DP(n-1, w-w[n]) + val[n])`
+
