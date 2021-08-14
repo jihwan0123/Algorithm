@@ -48,3 +48,8 @@
 
 #### [문자열압축](./2020_KAKAO_BLIND_RECRUITMENT/문자열압축.py)
 
+## 📌08.14
+
+#### [다트게임](./2018_KAKAO_BLIND_RECRUITMENT/다트게임.py)
+
+#### 
