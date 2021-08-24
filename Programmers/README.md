@@ -58,3 +58,10 @@
 
 #### [직업군 추천하기](./위클리_챌린지/직업군_추천하기.py)
 
+## 📌08.24
+
+#### [메뉴리뉴얼](./2021_KAKAO_BLIND_RECRUITMENT/메뉴리뉴얼.py)
+
+- course개의 원소를 갖는 order의 조합을 구해서, 나온 횟수를 count 한 후 최댓값과 같은 조합을 answer에 넣는다.
+
+- input orders가 항상 사전순으로 들어오는 것이 아니어서 combi 결과를 sorted를 해줘야했다.
