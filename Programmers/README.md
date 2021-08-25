@@ -65,3 +65,17 @@
 - course개의 원소를 갖는 order의 조합을 구해서, 나온 횟수를 count 한 후 최댓값과 같은 조합을 answer에 넣는다.
 
 - input orders가 항상 사전순으로 들어오는 것이 아니어서 combi 결과를 sorted를 해줘야했다.
+
+## 📌08.25
+
+#### [순위검색](./2021_KAKAO_BLIND_RECRUITMENT/순위검색.py)
+
+- 정확성 테스트는 단순하게 구현하면 되지만 효율성 테스트를 통과하지 못했다.
+
+> https://tech.kakao.com/2021/01/25/2021-kakao-recruitment-round-1/
+
+- 해설을 참고해서 combinations와 bisect를 이용하여 해결하였다.
+
+- 각각의 info마다 나올 수 있는 조합들로 지원자들의 정보를 분류해서 점수를 저장한다.
+-  그리고 이분탐색을 사용하기 위해 점수들을 정렬한 다음, 이분탐색을 이용하여 찾는 점수값이 들어갈 위치를 찾은 후 그 뒤의 값들의 수를 answer에 넣는다.
+
