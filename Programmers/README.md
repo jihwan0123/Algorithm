@@ -112,3 +112,13 @@
 #### [N-Queen](./N_Queen.py)
 
 - dfs
+
+## 📌09.04
+
+#### [표편집](./2021_KAKAO/표편집.py)
+
+> [2021 카카오 인턴십 해설](https://tech.kakao.com/2021/07/08/2021-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%9D%B8%ED%84%B4%EC%8B%AD-for-tech-developers-%EC%BD%94%EB%94%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%B4%EC%84%A4/)
+
+- list로 풀었을 땐 효율성에서 절반밖에 맞지 못했다.
+- linked list를 이용해서 풀어야 하는 문제이다. (세그먼트 트리를 이용한 풀이도 가능하다)
+- linked list가 익숙하지 않아서 prev, next를 생각하는게 어려웠는데 그림을 그려보면 이해하기 좋다.
