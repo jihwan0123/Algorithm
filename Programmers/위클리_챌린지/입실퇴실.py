@@ -8,9 +8,9 @@ def solution(enter, leave):
     while (e < len(enter)) and (l < len(leave)):
         if chk:
             cur.append(enter[e])
-        for c in cur:
-            answer[c].add(enter[e])
-            answer[enter[e]].add(c)
+            for c in cur:
+                answer[c].add(enter[e])
+                answer[enter[e]].add(c)
 
         if leave[l] in cur:
             cur.remove(leave[l])
