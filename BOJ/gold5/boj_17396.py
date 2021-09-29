@@ -7,7 +7,7 @@ INF = sys.maxsize
 
 n, m = map(int, input().split())
 nums = list(map(int, input().split()))
-nums[-1] = 0
+nums[-1] = 0 # 넥서스 있는 곳 이동 가능하도록 변경
 adj = [[] for _ in range(n)]
 
 
@@ -31,10 +31,11 @@ def dijkstra():
 
 for _ in range(m):
     a, b, t = map(int, input().split())
+    # 와드 있는곳 건너뜀
     if nums[a] or nums[b]:
         continue
     adj[a].append([b, t])
     adj[b].append([a, t])
 
 ans = dijkstra()
-print(ans if ans != INF else -1)
+print(ans if ans != INF else -1) # 이동 가능여부 체크
