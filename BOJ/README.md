@@ -951,3 +951,41 @@ iii) left = right =5 이므로 종료
 - 피보나치는 앞의 두 수를 더한만큼 호출되므로 다음과 같은 점화식 가능
   - `  fib[0][i] = fib[0][i-1] + fib[0][i-2]`
   - `  fib[1][i] = fib[1][i-1] + fib[1][i-2]`
+
+#### 10451. [순열 사이클](./silver2/boj_10451.cpp)
+
+- c++ 연습
+- dfs로 방문 처리하면서 dfs 시작할 수 있는 곳 체크
+- 다음 줄 추가해주면 in/out 빨라짐 => [관련내용](https://jaimemin.tistory.com/1521)
+- 개행할 때 <<endl 보다 <<'\n' 이 더 빠름
+
+```c++
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+}
+```
+
+#### 11724. [연결 요소의 개수](./silver2/boj_11724.cpp)
+
+- c++연습
+
+- DFS, BFS
+
+- BFS의 경우 인접한 노드만 확인하지 않으면 1000번을 계속 확인하기 때문에 시간초과 발생
+
+  - 따라서 벡터 사용해서 인접한 노드만 저장
+
+- `vector<int> adj[1001];`
+
+  - `[[],[], [], [], [] ... []]` 
+    - python의 `adj = [[] for _ in range(1001)]` 과 같다.
+  - `adj[i].push_back[j]` 으로 adj[i]에 j 추가 가능
+    - python의 `adj[i].append(j)`과 같다.
+
+- 간선이 0개거나 최댓값인 경우는 간선 연결상태 볼 필요 없이 0과 1이 된다.
+
+- 10451번과 마찬가지로 bfs, dfs 시작한 횟수 출력
+
+  
+
