@@ -19,7 +19,7 @@
   $ git commit -m {날짜} {사이트} {문제번호.문제}
   ```
   - 날짜 : mmdd
-  - 사이트 : 백준 (BOJ), 정올 (JO), 프로그래머스 (PGS), SW Expert Academy (SWEA)
+  - 사이트 : [백준](https://www.acmicpc.net/)(BOJ), [정올](http://www.jungol.co.kr/) (JO), [프로그래머스](https://programmers.co.kr/) (PGS), [SW Expert Academy](https://swexpertacademy.com/main/main.do) (SWEA)
 
 - 각 폴더별 README.md에 간략한 풀이 정리
 
