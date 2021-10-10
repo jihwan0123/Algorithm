@@ -1043,3 +1043,23 @@ print(round(3.5)) # 4
 - `odd_cnt = sum(map(lambda x: int(x) & 1, sub_num))` 을 이용해서 홀수 갯수 카운트
 - 1이면 total에 odd_cnt 더한 후 최대,최소 갱신
 - 2나 3이면 조건대로 2등분, 3등분 후 dfs 반복
+
+#### 14502. [연구소](./gold5/boj_14502.cpp)
+
+> C++
+
+- BFS, DFS
+- 빈칸 개수와 좌표, 바이러스의 좌표를 처음에 저장해둔다.
+- DFS로 바꿀 벽 3개 선택후 BFS
+- BFS로 바이러스 퍼지는 칸의 수 체크 후 개수 갱신
+  -  `초기 빈칸 개수 - 바이러스 퍼진 칸의 개수 - 3(벽으로 바꾼 칸의 수)` 와 최댓값을 갱신
+
+- C++ 문법
+  - `memcpy(arr, arr_origin, sizeof(arr));`
+    - `#include <cstring>`
+    - arr 배열에 arr_origin을 복사한다.
+  - `vector<pair<int, int>> virus_list;`
+    - `virus.first, virus.second`로 pair값 사용 가능
+  - `queue<pair<int, int>> q;`
+    - `q.push(make_pair(nx, ny));`로 q에 값 추가
+
