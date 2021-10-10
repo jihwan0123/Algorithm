@@ -1034,3 +1034,12 @@ print(round(3.5)) # 4
 
 - 0일때는 0 출력 (Zero Division 방지)
 
+## <10.10>
+
+#### 20164. [홀수 홀릭 호석](./gold5/boj_20164.py)
+
+- DFS
+- 문제에 주어진 대로, 길이가 1, 2, 3이상일때를 나눠서 DFS 진행
+- `odd_cnt = sum(map(lambda x: int(x) & 1, sub_num))` 을 이용해서 홀수 갯수 카운트
+- 1이면 total에 odd_cnt 더한 후 최대,최소 갱신
+- 2나 3이면 조건대로 2등분, 3등분 후 dfs 반복
