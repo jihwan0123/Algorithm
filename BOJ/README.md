@@ -1063,3 +1063,30 @@ print(round(3.5)) # 4
   - `queue<pair<int, int>> q;`
     - `q.push(make_pair(nx, ny));`로 q에 값 추가
 
+## <10.11>
+
+#### 21610. [마법사 상어와 비바라기](./gold5/boj_21610.cpp)
+
+> 구현
+
+- 문제에서 주어진 순서대로 구현한다.
+
+- **구름 이동할 때 n을 넘어설 때 index값을 잘 생각해야 한다!**
+
+  - index를 1부터 시작했기 때문에 다음과 같은 작업이 필요했다.
+
+  - ```c++
+    if (ny > n) {
+        ny = ny % n;
+        if (ny == 0) {
+            ny = n;
+        }
+    }
+    else if (ny < 1) {
+        ny = n - abs(ny % n);
+    }
+    ```
+
+- C++ 문법
+  - `#include<cstring>`
+  - `memset(is_removed, false, sizeof(is_removed));` : is_removed 배열을 false로 초기화
