@@ -1090,3 +1090,13 @@ print(round(3.5)) # 4
 - C++ 문법
   - `#include<cstring>`
   - `memset(is_removed, false, sizeof(is_removed));` : is_removed 배열을 false로 초기화
+
+## <10.12>
+
+#### 2304. [창고 다각형](./silver2/boj_2304.cpp)
+
+- 지붕 왼쪽, 오른쪽 나눠서 생각한다.
+- 왼쪽 끝에서부터 지붕까지 점점 커져야하고, 오른쪽 끝부터 지붕까지 점점 커진다.
+- `height[1001]` 선언해놓고, `height[i+1]이 height[i]`보다 작으면 `height[i]`로 바꾸면서 진행
+  - 오른쪽 끝에서부터도 마찬가지 `height[j-1], height[j]` 비교
+
