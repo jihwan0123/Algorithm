@@ -1188,4 +1188,9 @@ print(round(3.5)) # 4
 
 - MST
 - prim으로 최소 신장 트리 구한 후, 제일 긴 cost를 가진 간선 제거
+- [Kruskal풀이](./gold4/boj_1647.cpp)
+  - 가중치를 저장하고 마지막 가중치를 제외한 합을 구하면 된다.
+  - `#include<numeric>`
+  - `accumulate(v.begin(), v.end()-1, 0);`
+    - 시작, 끝, 합의 초기값
 
