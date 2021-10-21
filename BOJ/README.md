@@ -1221,3 +1221,12 @@ print(round(3.5)) # 4
 
 - Counter 사용
 
+## <10.21>
+
+#### 20166. [문자열 지옥에 빠진 호석](./gold5/boj_20166.cpp)
+
+- DFS
+- 8방향으로 DFS 돌면서 map으로 몇번 나왔는지 체크 후 출력
+- `map.find(s)` : s가 있으면 iterator 반환, 없으면 `map.end()` 반환
+  - `(key:value): iter->first, iter->second` 로 접근
+
