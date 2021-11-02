@@ -1348,3 +1348,11 @@ print(round(3.5)) # 4
 
 - 재귀로 1이 될때까지 반복해서 pallindrome 체크하면서 akaraka pallindrome인지 판별
 
+## <11.02>
+
+#### 23292. [코딩 바이오리듬](./bronze/boj_23292.py)
+
+#### 23321. [홍익 댄스 파티](./bronze/boj_23321.py)
+
+- 단순 구현
+
