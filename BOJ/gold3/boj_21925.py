@@ -31,6 +31,6 @@ while e <= n:
     else:
         # 마지막에 팰린드롬 아니면 chk=False
         chk = False
-        e += 1
+        e += 2
 
 print(cnt if chk else -1)
