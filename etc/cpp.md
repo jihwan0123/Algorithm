@@ -237,3 +237,37 @@ int main(void) {
      - 공간복잡도 O(1)
      - 시간복잡도 O(n)
 
+
+
+### [스택](https://www.youtube.com/watch?v=0DsyCXIN7Wg)
+
+- 정의와 성질
+  - 한쪽 끝에서만 원소를 넣거나 뺄 수 있는 자료구조
+  - FILO (First-In-Last-Out)
+  - 원소의 추가/제거/상단 원소 확인 O(1)
+  - 제일 상단이 아닌 나머지 원소는 확인/변경 원칙적으로 불가능
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+  stack<int> S;
+  S.push(10); // 10
+  S.push(20); // 10 20
+  S.push(30); // 10 20 30
+  cout << S.size() << '\n'; // 3
+  if(S.empty()) cout << "S is empty\n";
+  else cout << "S is not empty\n"; // S is not empty
+  S.pop(); // 10 20
+  cout << S.top() << '\n'; // 20
+  S.pop(); // 10
+  cout << S.top() << '\n'; // 10
+  S.pop(); // empty
+  if(S.empty()) cout << "S is empty\n"; // S is empty
+  cout << S.top() << '\n'; // runtime error 발생
+}
+```
+
+- push, pop. top, empty, size
+
