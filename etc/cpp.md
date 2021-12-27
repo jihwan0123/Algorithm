@@ -271,3 +271,16 @@ int main(void) {
 
 - push, pop. top, empty, size
 
+
+
+#### [큐](https://www.youtube.com/watch?v=D_fwSy5tRAY&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=7&t=5s)
+
+- 정의와 성질
+  - FIFO (First-In-First-Out)
+  - 원소의 추가, 제거 O(1)
+  - 제일 앞, 뒤 원소 확인 O(1)
+  - 제일 앞 뒤가 아닌 나머지 원소들의 확인/변경이 원칙적으로 불가능
+- head, tail이 MAX일때 0으로 바꿔주면 원형 큐
+- STL queue
+  - push, pop, front, back, empty, size
+
