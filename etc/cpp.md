@@ -284,3 +284,19 @@ int main(void) {
 - STL queue
   - push, pop, front, back, empty, size
 
+
+
+#### [덱](https://www.youtube.com/watch?v=0mEzJ4S1d8o&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=8&t=2s)
+
+- 정의와 성질
+  - Double Ended Queue
+  - 양쪽 끝에서 삽입과 삭제가 가능한 자료구조
+  - 원소 추가/제거 O(1)
+  - 제일 앞 뒤의 원소확인 O(1)
+  - 제일 앞/뒤가 아닌 나머지 원소들의 확인/변경이 원칙적으로 불가능
+    - STL deque에서는 인덱스로 원소 접근 가능
+- head, tail의 초기값이 배열의 중간값
+- STL deque
+  - push_front, push_back, pop_front, pop_back
+  - insert, erase, index접근 가능 (vector와 유사함)
+
