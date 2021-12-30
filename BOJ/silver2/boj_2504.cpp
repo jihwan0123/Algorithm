@@ -39,9 +39,10 @@ int main(void)
         cout << 0 << "\n";
         return 0;
       }
-      // '(' 쌍이 맞으면 temp 더하고 2로 나눈다
+      // '(' 쌍이 맞으면 temp 더하고
       if (s[i - 1] == '(')
         ans += temp;
+      // 스택에서 제거하고 2로 나눈다.
       st.pop();
       temp /= 2;
     }
@@ -54,9 +55,10 @@ int main(void)
         cout << 0 << "\n";
         return 0;
       }
-      // '[' 쌍이 맞으면 temp 더하고 3로 나눈다
+      // '[' 쌍이 맞으면 temp 더하고
       if (s[i - 1] == '[')
         ans += temp;
+      // 스택에서 제거하고 3으로 나눈다.
       st.pop();
       temp /= 3;
     }

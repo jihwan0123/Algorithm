@@ -1,4 +1,4 @@
-# C++
+# C++ 정리
 
 [바킹독의 실전 알고리즘 강의](https://www.youtube.com/playlist?list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY) 보면서 기초부터 다시 정리
 
@@ -299,4 +299,11 @@ int main(void) {
 - STL deque
   - push_front, push_back, pop_front, pop_back
   - insert, erase, index접근 가능 (vector와 유사함)
+
+
+
+#### [BFS](https://www.youtube.com/watch?v=ftOmGdm95XI&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=10)
+
+- 너비 우선 탐색(Breadth First Search)
+- 다차원 배열에서 각 칸을 방문할 때 너비를 우선으로 방문하는 알고리즘
 
