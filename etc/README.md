@@ -306,4 +306,13 @@ int main(void) {
 
 - 너비 우선 탐색(Breadth First Search)
 - 다차원 배열에서 각 칸을 방문할 때 너비를 우선으로 방문하는 알고리즘
+- 큐 사용
+
+
+
+#### [DFS](https://www.youtube.com/watch?v=93jy2yUYfVE&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=11)
+
+- 깊이 우선 탐색 (Depth First Search)
+- 다차원 배열에서 각 칸을 방문할 때 깊이를 우선으로 방문하는 알고리즘
+- 스택 사용
 
