@@ -330,3 +330,60 @@ int main(void) {
   - 재귀는 반복문으로 구현했을 때에 비해 코드가 간결하지만 메모리/시간에서는 손해를 봄
   - 한 함수가 자기 자신을 여러 번 호출하면 비효율적일 수 있음
   - 재귀함수가 자기 자신을 부를 때 스택 영역에 계속 누적이 됨 (메모리 구조)
+
+
+
+#### [백트래킹](https://www.youtube.com/watch?v=Enz2csssTCs&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=13&t=162s)
+
+- 현재 상태에서 가능한 모든 후보군을 따라 들어가며 탐색하는 알고리즘
+
+- [STL next_permutation](https://www.cplusplus.com/reference/algorithm/next_permutation/)
+
+  - algorithm 헤더에 있음
+  
+  - ```cpp
+    int a[3] = {1,2,3};
+    do {
+        for (int i = 0; i < 3; i++)
+            cout << a[i];
+        cout << '\n';
+    } while (next_permutation(a,a+3))
+    /*
+    123
+    132
+    213
+    231
+    312
+    321
+    */
+    ```
+
+  - 마지막이어서 다음 순열이 존재하지 않으면 false 반환
+
+  - 사전순으로 반환, 중복이 있어도 사전순 결과 반환
+
+    - 5,2,3 => ({5,2,3}, {5,3,2})
+
+  - 조합이 필요하다면?
+  
+    - ```cpp
+      int b[4] = {0, 0, 1, 1};
+      do
+      {
+          for (int i = 0; i < 4; i++)
+              if (b[i] == 0)
+                  cout << i + 1;
+          cout << '\n';
+      } while (next_permutation(b, b + 4));
+      /*
+        12
+        13
+        14
+        23
+        24
+        34
+      */
+      ```
+  
+    - 다음과 같이 사용 가능
+
