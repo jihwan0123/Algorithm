@@ -387,3 +387,58 @@ int main(void) {
   
     - 다음과 같이 사용 가능
 
+
+
+#### [정렬 I](https://www.youtube.com/watch?v=59fZkZO0Bo4&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=15)
+
+- 선택 정렬
+  - 최댓값 or 최솟값 찾아서 들어갈 자리에 정렬
+  - O(n^2)
+
+```cpp
+int arr[10] = {3, 2, 7, 116, 62, 235, 1, 23, 55, 77};
+int n = 10;
+for (int i = n - 1; i > 0; i--) {
+  int mxidx = 0;
+  for (int j = 1; j <= i; j++) {
+    if (arr[mxidx] < arr[j])
+      mxidx = j;
+  }
+  swap(arr[mxidx], arr[i]);
+}
+
+for (int i = n - 1; i > 0; i--) {
+  swap(*max_element(arr, arr + i + 1), arr[i]);
+}
+```
+
+- 버블 정렬
+  - 인접한 두 원소 비교
+  - O(n^2)
+
+```cpp
+for (int i=0;i<n;i++)
+    for (int j=0;j<n-1-i;j++)
+        if (arr[j] > arr[j+1])
+            swap(arr[j], arr[j+1]);
+```
+
+
+
+- 병합정렬 (Merge sort)
+  - O(n*logn)
+  - 리스트를 2개로 나눠서(분할) 정렬한 후 합친다(합병). (재귀)
+  - Stable sort
+    - 정렬 후에도 순서가 유지되는 성질
+- 퀵정렬 (Quick sort)
+  - O(n*logn), 최악의 경우 O(n^2)
+  - 재귀적으로 구현
+  - pivot을 잡아서 pivot 왼쪽엔 작은원소, 오른쪽엔 큰원소 저장
+  - 추가적인 공간 없이(in-place sort) 배열 안에서의 자리바꿈만으로 해결이 되기 때문에 cache hit rate가 높음
+
+|                                   | Merge sort | Quick Sort                                                  |
+| --------------------------------- | ---------- | ----------------------------------------------------------- |
+| 시간복잡도                        | O(NlogN)   | 평균 O(NlogN), 최악 O(N^2) 평균적으로 <br />Merge 보다 빠름 |
+| 추가적으로 필요한 공간 (Overhead) | O(N)       | O(1)                                                        |
+| Stable Sort 여부                  | O          | X                                                           |
+
