@@ -442,3 +442,68 @@ for (int i=0;i<n;i++)
 | 추가적으로 필요한 공간 (Overhead) | O(N)       | O(1)                                                        |
 | Stable Sort 여부                  | O          | X                                                           |
 
+#### [정렬 II](https://www.youtube.com/watch?v=dq5t1woLJMw&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=16&t=4s)
+
+- Counting Sort
+
+  - 수의 범위가 어느 정도 한정적일 때에만 사용 가능 (1000만 이하)
+  - `arr[i]` 에 i 가 나온 횟수 저장 후 나온만큼 순서대로 출력
+
+- Radix Sort
+
+  - 자릿수를 이용해서 정렬을 수행하는 알고리즘
+  - Counting sort 활용하는 방법
+  - 1의자리 -> 10의자리 -> 100의자리 ... 순서로 정렬
+  - 시간복잡도 O(DN)
+
+  
+
+- Comparision Sort
+
+  - 원소들끼리 비교하는 정렬
+  - bubble, merge, quick sort
+
+- Non-comparison Sort
+
+  - 원소들끼리 비교 x
+  - counting, radix sort
+
+
+
+- **STL sort**
+
+  - quick sort 기반으로 하지만, 재귀의 깊이가 너무 깊어지면 O(N logN)으로 처리함 (**Introspective sort**)
+
+  - 기본적으로 unstable sort
+
+  - pair, tuple에서는 제일 앞의 원소를 비교, 같으면 그 다음 비교 하는 방식이 기본
+
+  - ```cpp
+    int a[5] = {1, 4, 5, 2, 7};
+    sort(a, a+5);
+    vector<int> b = {1,4,5,2,7};
+    sort(b.begin(), b.end()); // or sort(b.begin(), b.begin()+5);
+    // stable_sort로 stable sort 가능
+    
+    // int 형을 5로 나눈 나머지순으로, 5로 나눈 나머지가 같다면 크기 순으로
+    bool cmp(int a, int b){
+        if (a%5 != b%5) return a%5 < b%5;
+        return a < b;
+    }
+    sort(b.begin(),b.end(),cmp);
+    ```
+  
+  - 주의사항
+
+    - 비교 함수는 두 값이 같을 때 (혹은 우선순위가 같을 때) false를 반환
+
+    - 비교 함수의 인자로 STL 혹은 클래스 객체를 전달 시 reference를 사용
+
+      - ```cpp
+        bool cmp(const string &a, const string &b){
+            return a.back() < a.back();
+        }
+        ```
+  
+        
+

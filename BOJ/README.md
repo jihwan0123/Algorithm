@@ -2061,3 +2061,10 @@ print(round(3.5)) # 4
 - 정렬1 기본문제
   - [배열 합치기](./silver5/boj_11728.cpp), [수 정렬하기 5](./silver5/boj_15688.cpp), [좌표 정렬하기](./silver5/boj_11650.cpp), [좌표 정렬하기2](./silver5/boj_11651.cpp)
 
+## <1.12>
+
+- 정렬2 연습문제
+  - [수 정렬하기 5](./silver5/boj_15688.cpp) : counting sort풀이 추가
+  - [시리얼 번호](./silver3/boj_1431.cpp)
+  - [카드](./silver4/boj_11652.cpp)
+
