@@ -2068,3 +2068,17 @@ print(round(3.5)) # 4
   - [시리얼 번호](./silver3/boj_1431.cpp)
   - [카드](./silver4/boj_11652.cpp)
 
+## <1.13>
+
+#### 5648. [역원소 정렬](./silver4/boj_5648.cpp)
+
+- STL의 reverse, stoll 사용
+
+#### 2910. [빈도 정렬](./silver3/boj_2910.cpp)
+
+- stable_sort 사용
+
+#### 7796. [먹을 것인가 먹힐 것인가](./silver3/boj_7795.cpp)
+
+- 정렬 후 비교
+
