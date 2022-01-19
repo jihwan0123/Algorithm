@@ -17,7 +17,7 @@ int main(void) {
     d[0] = 1;
     for (int i = 0; i < n; i++)
       for (int j = a[i]; j <= m; j++)
-        d[j] += d[j - a[i]]; // j - a[i]에 a[i] 동전 1개를 더하면 j원
+        d[j] += d[j - a[i]]; // j - a[i]에 a[i] 동전 추가
 
     cout << d[m] << '\n';
   }
