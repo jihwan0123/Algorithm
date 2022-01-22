@@ -13,9 +13,8 @@ bool check(vector<tuple<ll, ll, ll>> &v, ll x)
   removed.clear();
   for (auto t : v)
   {
-    ll s = get<0>(t);
-    ll l = get<1>(t);
-    ll o = get<2>(t);
+    ll s, l, o;
+    tie(s, l, o) = t;
     ll temp = s * max(ll(1), x - l);
     ret += temp;
     if (o == 1)
