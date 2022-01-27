@@ -543,3 +543,126 @@ for (int i=0;i<n;i++)
 2. 탐색 범위를 줄여도 올바른 결과를 낸다는 사실을 수학적으로 증명
 3. 구현
 
+
+
+#### [수학](https://www.youtube.com/watch?v=2RCJApSVxRI&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=19&t=20s)
+
+- **소수**
+  
+  - 1과 자기 자신으로만 나누어지는 수
+  - 약수가 2개인 수
+  - 소수 판정법
+    - 2부터 n-1까지의 수로 나누어지지 않는 수 = O(n)
+    
+    - 합성수 N에서 1을 제외한 가장 작은 약수는 sqrt(n) 이하이다.  = O(sqrt(n))
+    
+    - ```cpp
+      bool isprime(int n){
+        if (n==1) return 0;
+        for (int i=2; i*i<=n; i++)
+          if (n%i == 0) return 0;
+        return 1;
+      }
+      ```
+
+
+
+- **합성수**
+  
+  - 1과 자기 자신을 제외한 다른 약수를 가진 수
+  - 1은 소수도 합성수도 아니다.
+- 범위 내에서의 소수 판정법 - 에라토스테네스의 체
+  - 최적화시 시간복잡도 : O(N lglg N)
+  
+  - ```cpp
+    vector<int> sieve(int n){
+      vector<int> primes;
+      vector<bool> state(n+1, true);
+      state[1] = false;
+      for (int i=2; i*i<=n; i++){
+        if (!state[i]) continue;
+        for (int j=i*i; j<=n; j+=i)
+          state[j] = false;
+      }
+      for (int i=2; i<=n; i++)
+        if (state[i]) primes.push_back(i);
+      return primes;
+    }
+    ```
+
+
+
+- 약수 = 어떤 수를 나누어떨어지게 하는 수
+  - 18의 약수 : 1,2,3,6,9,18 (1,2,3을 구하면 나머지는 18에서 나누면 구해진다)
+
+```cpp
+vector<int> divisor(int n) {
+    vector<int> div;
+    for (int i=1; i*i<=n; i++){
+        if (n%i == 0) div.push_back(i);
+    }
+    for (int j=(int)div.size()-1; j>=0; j--){
+        if (div[j] * div[j] == n) continue;
+        div.push_back(n/ div[j]);
+    }
+    return div;
+}
+```
+
+
+
+- **최대공약수 (Greatest Common Divisor)** = 두 자연수의 공통된 약수 중 가장 큰 약수
+
+  - 유클리드 호제법
+
+  - GCD(A,B) = GCD(B, r)
+
+  - GCD(20, 12) = GCD(12, 8) = GCD(8, 4) = GCD(4, 0) = 4
+
+  - ```cpp
+    int gcd(int a, int b){
+        if (a==0) return b;
+        return gcd(b%a, a);
+    }
+    ```
+
+  - [numeric library](https://en.cppreference.com/w/cpp/numeric/gcd)에 있음
+
+- **최소공배수(LCM)**
+
+  - A x B = GCD(A, B) x LCM(A,B)
+
+  - ```cpp
+    int lcm(int a, int b){
+        return a / gcd(a,b) * b;
+    }
+    ```
+
+
+
+- **연립 합동방정식**
+
+  - 6명씩 조를 짰을 때 3명이 남는다.
+
+  - 5명씩 조를 짰을 때 2명이 남는다.
+
+  - 학생은 30명 미만
+
+    ```cpp
+    int chk() {
+        for (int i=3; i<30; i+=6){
+            if (i%5 == 2) return i;
+    	}
+        return -1;
+    }
+    ```
+
+  - 중국인의 나머지 정리 (대회용 풀이)
+
+
+
+- 순서를 고려하지 않고 뽑는 경우 : 조합
+  - `nCk = n! / ((n-k)! k!)`
+- 순서를 고려하는 경우 : 순열
+  - `nPr = n! / (n-r)!`
+
