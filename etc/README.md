@@ -666,3 +666,5 @@ vector<int> divisor(int n) {
 - 순서를 고려하는 경우 : 순열
   - `nPr = n! / (n-r)!`
 
+- `nCk = n-1Ck + n-1Ck-1`
+
