@@ -8,7 +8,7 @@ int main(void) {
   cin >> x;
   int n = 1;
   while (x > n) x -= n++;
- if (n % 2 == 0)
+  if (n % 2 == 0)
     cout << x << '/' << n + 1 - x;
   else
     cout << n + 1 - x << '/' << x;

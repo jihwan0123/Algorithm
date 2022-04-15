@@ -668,3 +668,46 @@ vector<int> divisor(int n) {
 
 - `nCk = n-1Ck + n-1Ck-1`
 
+
+#### [해시](https://www.youtube.com/watch?v=1-k-D2AYY0I&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=22)
+
+- insert, erase, find, update 모두 O(1)
+
+해시함수
+- 임의 길이의 데이터를 고정된 길이의 데이터로 대응시키는 함수
+
+해시테이블
+
+충돌
+- `0000 0000 0000 5135, 9999 9999 9999 5135` 처럼 뒷4자리가 같은 경우
+
+충돌 회피 방법
+- Chaining
+  - 각 인덱스마다 연결 리스트를 둬서 충돌 회피하는 방법
+  - 실제 STL에서 사용하는 방식
+  - 이상적인 상황에서는 O(1) 이지만, 충돌이 빈번할수록 성능이 저하되고, 모든 키의 해시 값이 같은 최악의 상황에서는 O(N)
+
+- Open addressing
+  - `(0000 0000 0000 3333 , Kim)` = 3333번지
+  - `(6278 5651 9104 3333, Lee)` = 3334
+  - `(7298 1127 6004 3334, Bae)` = 3335
+  - 같은 방식으로 저장 후 3333 find시 3333부터 일치하는지 확인하면서 주소 하나씩 이동하면서 체크
+  - erase시 삭제한 칸에 원래 값이 있었지만 제거된 상태라고 명시 (insert시 만나면 삽입)
+  - Linear Probing
+    - 충돌 발생 시 오른쪽으로 1칸씩 이동하는 방식
+    - 장점 : Cache hit rate가 높다.
+    - 단점 : Clustering이 생겨 성능에 영향을 줄 수 있다. (군집이 커질수록 성능 저하)
+  - Quadratic probing
+    - 충돌 발생 시 오른쪽으로 1,3,5 칸씩 이동하는 방식
+    - 장점
+      - Cache hit rate가 나쁘지 않다.
+      - Clustering을 어느 정도 회피할 수 있다.
+    - 단점
+      - 해시 값이 같을 경우 여전히 Clustering이 발생한다.
+  - Doubling Hashing
+    - 충돌 발생 시 이동할 칸의 수를 새로운 해시 함수로 계산하는 방식
+    - 장점 : Clustering을 효과적으로 회피할 수 있다.
+    - 단점 : Cache hit rate가 매우 낮다.
+
+- STL
+> unordered_set, unordered_multiset, unordered_map
